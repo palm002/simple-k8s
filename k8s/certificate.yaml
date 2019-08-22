@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: domain-tls
+spec:
+  secretName: domain-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: mirkopalancaji.com
+  dnsNames:
+    - mirkopalancaji.com
+    - www.mirkopalancaji.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - mirkopalancaji.com
+          - www.mirkopalancaji.com
