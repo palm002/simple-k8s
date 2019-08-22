@@ -1,9 +1,9 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: domain-tls
+  name: mirkopalancaji-com-tls
 spec:
-  secretName: domain-tls
+  secretName: mirkopalancaji-com
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
