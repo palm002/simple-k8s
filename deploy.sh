@@ -14,7 +14,7 @@ docker push mirks/multi-server:$SHA
 docker push mirks/multi-worker:$SHA
 
 # Apply k8s configs
-kubectlapply -f k8s
+kubectl apply -f k8s
 
 # Set image to latest using imperative approach
 kubectl set image deployments/server-deployment server=mirks/multi-server:$SHA
